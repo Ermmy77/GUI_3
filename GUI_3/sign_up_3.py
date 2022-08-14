@@ -21,11 +21,13 @@ def check():
 # function used to save username entered to text file and for error handling
 def save_username():
     assessment_file = open("username.txt", "a")
-    if username_entry.get() != "":
+    if username_entry.get() == "":
+        print("Please enter a valid username")
+    elif username_entry.get().isdigit():
+        print("Please enter a valid username")
+    else:
         assessment_file.write(username_entry.get())
         assessment_file.write("\n")
-    else:
-        print("Please enter a valid username")
     assessment_file.close()
 
 
