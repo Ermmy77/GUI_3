@@ -2,7 +2,6 @@
 from tkinter import *
 from subprocess import call
 import webbrowser
-import datetime
 
 # ------------------ Creating Window ------------------
 
