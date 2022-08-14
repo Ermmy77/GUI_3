@@ -40,14 +40,10 @@ def callback(url):
 
 # function to save assessment name input to a text file and for error handling
 def save_assessment_name():
-    special_char = StringVar()
-    special_char.set("!@#$%^&*()+=:;<>?/.,|")
     assessment_file = open("assessment_3.txt", "a")
     if assessment_entry.get() != "":
         assessment_file.write(assessment_entry.get())
         assessment_file.write("\n")
-    elif assessment_entry.get() == special_char:
-        print("Please enter a valid assessment name")
     else:
         print("Please enter a valid assessment name")
     assessment_file.close()
