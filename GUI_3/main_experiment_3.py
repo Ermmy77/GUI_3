@@ -58,6 +58,11 @@ def reset_assessment_entry():
     assessment_entry.delete(0, END)
 
 
+# ------------------ Upload images ------------------
+logo_image = PhotoImage(file="/Users/malam/PycharmProjects/Website/img/theotherone.png")
+button_image = PhotoImage(file="/Users/malam/PycharmProjects/Website/img/back_to_top_button.jpeg")
+instagram = PhotoImage(file="/Users/malam/PycharmProjects/Website/img/Untitled.png")
+
 # ------------------ MAKE FRAMES ------------------
 top_frame = LabelFrame(root, bg="black")
 top_frame.grid(column=0, row=0, columnspan=5, padx=10, pady=10, sticky="NSEW")
@@ -68,11 +73,7 @@ middle_frame.grid(column=0, row=1, columnspan=5, rowspan=7, padx=10, sticky="NSE
 footer = LabelFrame(root, bg="#88b589")
 footer.grid(column=0, row=8, columnspan=5, padx=10, pady=10, sticky="NSEW")
 
-# ------------------ Upload images ------------------
-logo_image = PhotoImage(file="/Users/malam/PycharmProjects/Website/img/theotherone.png")
-button_image = PhotoImage(file="/Users/malam/PycharmProjects/Website/img/back_to_top_button.jpeg")
-instagram = PhotoImage(file="/Users/malam/PycharmProjects/Website/img/Untitled.png")
-
+# ------------------------------------ Top Section ------------------------------------
 # ------------------ Making Buttons ------------------
 # logo button for logo
 logo_button = Button(root, image=logo_image, borderwidth=0, relief="raised", bg="black")
@@ -94,14 +95,10 @@ assessments.grid(column=3, row=0, padx=40)
 sign_up_button = Button(root, text="Sign Up", fg="white", bg="black", relief="raised", command=sign_in_window)
 sign_up_button.grid(column=4, row=0, padx=40)
 
+# ------------------------------------ Mid Section ------------------------------------
 # creates button to go back to top of page
 back_to_top = Button(root, image=button_image, bg="green", relief="raised", borderwidth=0)
 back_to_top.grid(column=4, row=7)
-
-# creates button linked to instagram account
-instagram_button = Button(root, image=instagram, borderwidth=0, relief="raised", bg="#88b589")
-instagram_button.grid(column=4, row=8, pady=20, padx=20)
-instagram_button.bind("<Button-1>", lambda e: callback("https://www.instagram.com/marickmalamala"))
 
 # creates button to submit assessment entries
 submit_button = Button(root, text="Submit", bg="#88b589", relief="raised", command=lambda: [save_assessment_name(),
@@ -126,10 +123,6 @@ explanation = Label(root, text="TimeOrg is a programme designed to help students
                                "time between school work and hobbies.", bg="#88b589")
 explanation.grid(column=1, row=5, columnspan=2, pady=20)
 
-copyright_label = Label(root, text=u"\u00A9" + 'TimeOrg Ltd 2022.', bg='#88b589')
-copyright_label.grid(column=0, row=8)
-copyright_label.configure(font=("Times New Roman", 25))
-
 assessment_label = Label(root, text="Assessment Name:", bg='#88b589')
 assessment_label.grid(row=6, column=0, sticky="E")
 assessment_label.configure(font=("Times New Roman", 20))
@@ -146,6 +139,16 @@ assessment_entry.grid(row=6, column=1, columnspan=2, sticky="EW")
 # creates entry box so user can select due date
 time_button = Button(root, command=time_entry_window, text="Select...")
 time_button.grid(row=7, column=1, columnspan=2, sticky="EW")
+
+# ------------------------------------ Footer ------------------------------------
+# creates button linked to instagram account
+instagram_button = Button(root, image=instagram, borderwidth=0, relief="raised", bg="#88b589")
+instagram_button.grid(column=4, row=8, pady=20, padx=20)
+instagram_button.bind("<Button-1>", lambda e: callback("https://www.instagram.com/marickmalamala"))
+
+copyright_label = Label(root, text=u"\u00A9" + 'TimeOrg Ltd 2022.', bg='#88b589')
+copyright_label.grid(column=0, row=8)
+copyright_label.configure(font=("Times New Roman", 25))
 
 
 # ------------------ Run the mainloop ------------------
