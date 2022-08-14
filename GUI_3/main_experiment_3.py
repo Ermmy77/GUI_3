@@ -74,30 +74,36 @@ button_image = PhotoImage(file="/Users/malam/PycharmProjects/Website/img/back_to
 instagram = PhotoImage(file="/Users/malam/PycharmProjects/Website/img/Untitled.png")
 
 # ------------------ Making Buttons ------------------
-# logo button for returning to front page
+# logo button for logo
 logo_button = Button(root, image=logo_image, borderwidth=0, relief="raised", bg="black")
 logo_button.grid(column=0, row=0, pady=10, padx=15)
 
-# home button for returning to front page
+# creates button for home page
 home_button = Button(root, text="Home", fg="white", bg="black", relief="raised")
 home_button.grid(column=1, row=0, padx=40)
 
+# creates button for going to about us page
 about_us_button = Button(root, text="About Us", fg="white", bg="black", relief="raised", command=about_us_window)
 about_us_button.grid(column=2, row=0, padx=40)
 
+# creates button to go from home page to assessments page
 assessments = Button(root, text="Assessments", fg="white", bg="black", relief="raised", command=assessments_window)
 assessments.grid(column=3, row=0, padx=40)
 
-sign_in_button = Button(root, text="Sign Up", fg="white", bg="black", relief="raised", command=sign_in_window)
-sign_in_button.grid(column=4, row=0, padx=40)
+# creates button to open sign-up window
+sign_up_button = Button(root, text="Sign Up", fg="white", bg="black", relief="raised", command=sign_in_window)
+sign_up_button.grid(column=4, row=0, padx=40)
 
+# creates button to go back to top of page
 back_to_top = Button(root, image=button_image, bg="green", relief="raised", borderwidth=0)
 back_to_top.grid(column=4, row=7)
 
+# creates button linked to instagram account
 instagram_button = Button(root, image=instagram, borderwidth=0, relief="raised", bg="#88b589")
 instagram_button.grid(column=4, row=8, pady=20, padx=20)
 instagram_button.bind("<Button-1>", lambda e: callback("https://www.instagram.com/marickmalamala"))
 
+# creates button to submit assessment entries
 submit_button = Button(root, text="Submit", bg="#88b589", relief="raised", command=lambda: [save_assessment_name(),
                                                                                             reset_assessment_entry()])
 submit_button.grid(column=3, row=6, rowspan=2, sticky="NSEW", pady=5, padx=10)
@@ -133,9 +139,11 @@ time_label.grid(row=7, column=0, sticky="E")
 time_label.configure(font=("Times New Roman", 20))
 
 # ------------------ Entry Field ------------------
+# creates entry box so user can enter assessment name
 assessment_entry = Entry(root, font=('Times New Roman', 15), relief="raised")
 assessment_entry.grid(row=6, column=1, columnspan=2, sticky="EW")
 
+# creates entry box so user can select due date
 time_button = Button(root, command=time_entry_window, text="Select...")
 time_button.grid(row=7, column=1, columnspan=2, sticky="EW")
 

@@ -29,12 +29,15 @@ def save_time():
 
 
 # ------------------ Add Calendar ------------------
+# creates calendar for the user to pick a date
 calendar = Calendar(time, selectmode='day', year=2022, month=10, day=14)
-
+# packs the calendar
 calendar.pack(pady=20)
 
 # ------------------ Add Button and Label ------------------
+# creates a button which saves the user input when clicked
 select_button = Button(time, text="Select Date", command=lambda: [save_time()])
+# packs button
 select_button.pack(pady=20)
 
 

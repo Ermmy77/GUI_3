@@ -33,12 +33,15 @@ def about_us_assessments():
 
 
 # ------------------ Make Frames ------------------
+# creates frame for navigation bar
 top_frame = LabelFrame(about_us, bg="black")
 top_frame.grid(column=0, row=0, columnspan=5, padx=10, pady=10, sticky="NSEW")
 
+# creates frame for middle section of program
 middle_frame = LabelFrame(about_us, bg="#88b589")
 middle_frame.grid(column=0, row=1, columnspan=5, rowspan=6, padx=10, sticky="NSEW")
 
+# creates frame for the footer
 footer = LabelFrame(about_us, bg="#88b589")
 footer.grid(column=0, row=7, columnspan=5, padx=10, pady=10, sticky="NSEW")
 
@@ -51,25 +54,32 @@ co_founder = PhotoImage(file="/Users/malam/PycharmProjects/Website/img/Co-Founde
 coo = PhotoImage(file="/Users/malam/PycharmProjects/Website/img/coo.png")
 
 # ------------------ Making Buttons ------------------
+# creates button to go from about us page to home page
 logo_button = Button(about_us, image=logo_image, borderwidth=0, relief="raised", bg="black", command=about_us_home)
 logo_button.grid(column=0, row=0, pady=10, padx=15)
 
+# creates button to go from about us page to home page
 home_button = Button(about_us, text="Home", fg="white", bg="black", relief="raised", command=about_us_home)
 home_button.grid(column=1, row=0, padx=70)
 
+# creates button for about us page
 about_us_button = Button(about_us, text="About Us", fg="white", bg="black", relief="raised")
 about_us_button.grid(column=2, row=0, padx=70)
 
+# creates button to go from about us page to assessments page
 assessment_button = Button(about_us, text="Assessments", fg="white", bg="black", relief="raised",
                            command=about_us_assessments)
 assessment_button.grid(column=3, row=0, padx=70)
 
-sign_in_button = Button(about_us, text="Sign In", fg="white", bg="black", relief="raised", command=about_us_sign_in)
-sign_in_button.grid(column=4, row=0, padx=70)
+# creates button to go from about us page to sign-up page
+sign_up_button = Button(about_us, text="Sign In", fg="white", bg="black", relief="raised", command=about_us_sign_in)
+sign_up_button.grid(column=4, row=0, padx=70)
 
+# creates button to go back to top of page
 back_to_top = Button(about_us, image=button_image, bg="green", relief="raised", borderwidth=0)
 back_to_top.grid(column=4, row=6)
 
+# creates button linked to instagram account
 instagram_button = Button(about_us, image=instagram, borderwidth=0, relief="raised", bg="#88b589")
 instagram_button.grid(column=4, row=7, pady=20, padx=20)
 instagram_button.bind("<Button-1>", lambda e: callback("https://www.instagram.com/marickmalamala"))
